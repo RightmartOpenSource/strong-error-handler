@@ -156,6 +156,20 @@ Using the above configuration, an error containing an `errorCode` property will 
   }
 }
 ```
+## Use outside of Loopback context 
+To transform errors to loopback conform errors outside of the express / loopback req / res pattern you can use the exported function: 
+
+```
+var buildResponseData = require("strong-error-handler").buildResponseData; 
+
+var err = new Error("my custom error") 
+
+var formatedErrro = buildResponseData(err )
+
+console.lor(formatedErrro)
+
+```
+
 
 ## Migration from old LoopBack error handler
 
